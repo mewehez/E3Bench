@@ -1,0 +1,34 @@
+from argparse import ArgumentParser, Namespace
+
+
+# Import local lib
+import sys
+from pathlib import Path
+
+lib_dir = (Path(__file__).parent / "../lib").resolve()
+lib_dir = str(lib_dir)
+# Add to sys.path if not already there
+if lib_dir not in sys.path:
+    sys.path.insert(0, lib_dir)
+
+from e3bench.wrappers import dynamic_latency_wrap_prog
+
+
+def get_args() -> Namespace:
+    parser = ArgumentParser(description="Run a command once and log start/end times.")
+
+    parser.add_argument("--prog", required=True,
+        help="Program command to run (quote if it has spaces). Example: --prog 'python3 myscript.py'")
+    parser.add_argument("--min-ms", type=float, default=100.0,
+                    help="Target minimum total time window in milliseconds (default: 100.0)")
+    parser.add_argument("--output-path", required=True, type=Path,
+                        help="Output CSV file path")
+    
+    return parser.parse_args()
+
+
+if __name__ == "__main__":
+    args = get_args()
+    dynamic_latency_wrap_prog(args.prog, args.output_path, min_ms=args.min_ms)
+    
+
