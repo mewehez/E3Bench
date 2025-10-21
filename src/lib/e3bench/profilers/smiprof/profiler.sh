@@ -66,7 +66,7 @@ SLEEP_SEC=$(awk -v ms="$INTERVAL_MS" 'BEGIN { printf "%.3f", ms/1000 }')
 
 # Fields to query from nvidia-smi (no units, no header).
 # Add/remove fields as needed.
-QUERY_FIELDS="imestamp,power.draw.instant,temperature.gpu,utilization.gpu,utilization.memory,name"
+QUERY_FIELDS="timestamp,power.draw.instant,temperature.gpu,utilization.gpu,utilization.memory,name"
 
 
 # --- Cleanup & traps ---
