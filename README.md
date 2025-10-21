@@ -19,3 +19,5 @@ cmake -S . -B build -DCMAKE_INSTALL_PREFIX=../lib/e3bench/profilers/inaprof
 cmake --build build
 cmake --install build
 ```
+
+The [wiki for SmartPower3](https://wiki.odroid.com/accessory/power_supply_battery/smartpower3).
