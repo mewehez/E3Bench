@@ -9,3 +9,13 @@ E3Bench provides a reproducible framework for measuring the real efficiency of d
 - Validation of measurement equivalence across devices.
 
 E3Bench is designed as an open research tool: it is the foundation for the experimental results reported in our thesis, and also serves as ground truth for energy prediction models in automated pruning and Neural Operation Search (NOS).
+
+
+## Installing `ina_profiler`
+
+```sh
+mkdir build
+cmake -S . -B build -DCMAKE_INSTALL_PREFIX=../lib/e3bench/profilers/inaprof
+cmake --build build
+cmake --install build
+```

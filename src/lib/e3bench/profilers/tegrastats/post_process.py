@@ -99,7 +99,7 @@ def adjust_timestamp(dataframe: pd.DataFrame) -> pd.DataFrame:
 
 
 
-def post_process_jetson_orin_nano(log_path: Union[str, Path]):
+def post_process_tegra_jon(log_path: Union[str, Path]):
     log_path = Path(log_path).resolve()
     logger.debug(f'Processing power from {log_path}')
 
