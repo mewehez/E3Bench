@@ -34,7 +34,7 @@ for ms in "${WAIT_MS[@]}"; do
       --prog "${prog_command}" \
       --warmup "${WARMUP}" \
       --repeat "${repeat}" \
-      --out "${out_csv}"
+      --output-path "${out_csv}"
 
     echo "[DONE] ${output_name}"
     echo

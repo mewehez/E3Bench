@@ -32,7 +32,7 @@ for ms in "${WAIT_MS[@]}"; do
     "${PYTHON}" "${wrapper_path}" \
       --prog "${prog_command}" \
       --min-ms "${min_ms}" \
-      --out "${out_csv}"
+      --output-path "${out_csv}"
 
     echo "[DONE] ${output_name}"
     echo
