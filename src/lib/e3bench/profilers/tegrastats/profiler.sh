@@ -4,7 +4,7 @@
 # Description: Starts `tegrastats` in the background until a `Ctrl + C` signal is received.
 
 # Usage: ./profiler.sh <interval> <output_path>
-# Example: ./script.sh 5 /home/user/logs/output.txt
+# Example: ./profiler.sh 5 /home/user/logs/output.txt
 
 # Ensures any error causes an exit
 # `-E`: the ERR trap is inherited in functions/command subshells.
@@ -45,7 +45,7 @@ log_warn() {
 # --- Argument check ---
 if [ "$#" -ne 2 ]; then
   log_error "Invalid tegrastat arguments."
-  log_info "Usage: $0 <interval_in_seconds> <output_path>"
+  log_info "Usage: $0 <interval_in_milliseconds> <output_path>"
   exit 1
 fi
 
@@ -117,5 +117,3 @@ while true; do
     fi
   fi
 done
-
-# tegrastats --interval <int> --logfile <out_file> &
